@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         session_regenerate_id(true);
         $_SESSION['petugas_login'] = true;
         $_SESSION['petugas_nama'] = 'Petugas';
-        header('Location: index.php');
+        header('Location: login.php');
         exit;
     }
     $error = 'Username atau password yang kamu masukkan salah.';
