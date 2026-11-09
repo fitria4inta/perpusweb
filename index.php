@@ -1,3 +1,7 @@
+<?php
+session_start();
+if (empty($_SESSION['petugas_login'])) { header('Location: login.php'); exit; }
+?>
 <!doctype html>
 <html lang="id">
 <head>
@@ -14,7 +18,7 @@
   <button class="nav" data-page="members"><span>♙</span> Data Anggota</button>
   <button class="nav" data-page="loans"><span>⇄</span> Peminjaman</button>
   <button class="nav" data-page="history"><span>◷</span> Riwayat Transaksi</button>
-  <div class="side-bottom"><div class="avatar">A</div><div><b>Administrator</b><small>Pengelola Perpustakaan</small></div></div>
+  <div class="side-bottom"><div class="avatar">A</div><div class="user-info"><b>Petugas</b><small>Pengelola Perpustakaan</small></div><a class="logout-link" href="logout.php" title="Keluar">Keluar ↗</a></div>
 </aside>
 <main class="main">
   <header class="topbar"><button class="menu-btn" id="menuBtn">☰</button><div><small id="crumb">HALAMAN UTAMA</small><h1 id="pageTitle">Dashboard</h1></div><div class="top-right"><span class="today" id="today"></span><div class="avatar">A</div></div></header>

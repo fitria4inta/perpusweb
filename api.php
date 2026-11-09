@@ -2,6 +2,7 @@
 header('Content-Type: application/json; charset=utf-8');
 require __DIR__ . '/config.php';
 session_start();
+if (empty($_SESSION['petugas_login'])) { http_response_code(401); echo json_encode(['error'=>'Sesi login berakhir. Silakan login kembali.'], JSON_UNESCAPED_UNICODE); exit; }
 function out($data, $code=200) { http_response_code($code); echo json_encode($data, JSON_UNESCAPED_UNICODE); exit; }
 function body() { return json_decode(file_get_contents('php://input'), true) ?? $_POST; }
 $action = $_GET['action'] ?? '';
