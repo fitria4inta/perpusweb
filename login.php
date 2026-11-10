@@ -1,6 +1,6 @@
 <?php
 session_start();
-if (!empty($_SESSION['petugas_login'])) { header('Location: index.php'); exit; }
+if (!empty($_SESSION['petugas_login'])) { header('Location: welcome.php'); exit; }
 
 // Satu akun petugas. Password disimpan dalam bentuk hash.
 $USERNAME = 'petugas';
@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         session_regenerate_id(true);
         $_SESSION['petugas_login'] = true;
         $_SESSION['petugas_nama'] = 'Petugas';
-        header('Location: login.php');
+        header('Location: welcome.php');
         exit;
     }
     $error = 'Username atau password yang kamu masukkan salah.';
